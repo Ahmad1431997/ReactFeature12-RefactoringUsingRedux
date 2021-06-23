@@ -45,6 +45,9 @@ const FormProduct = () => {
   const handleChange = (event) => {
     setProduct({ ...product, [event.target.name]: event.target.value });
   };
+  const handleImage=(event)=>{
+    setProduct({...product, image:event.target.files[0]})
+  }
 
   return (
     <form onSubmit={handleSubmit}>
@@ -88,13 +91,13 @@ const FormProduct = () => {
       <div className="form-group">
         <label for="exampleFormControlInput1">Image of product</label>
         <input
-          type="text"
+          type="file"
           className="form-control"
           id="exampleFormControlInput1"
           placeholder="Image of product"
-          onChange={handleChange}
+          onChange={handleImage}
           name="image"
-          value={product.image}
+          // value={product.image}
         />
       </div>
       <button type="submit" className="btn btn-dark">
