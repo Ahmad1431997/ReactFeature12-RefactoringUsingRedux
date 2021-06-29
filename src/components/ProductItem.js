@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 // Styling
 import { ProductWrapper } from "../styles";
 
-const ProductItem = ({ product, deleteProduct }) => {
+const ProductItem = (props) => {
+  const deleteProduct=props.deleteProduct;
+  const product=props.product
   return (
     <ProductWrapper>
       <Link to={`/products/${product.slug}`}>

@@ -1,7 +1,6 @@
 import axios from "axios";
-export const ADD_PRODUCT = "ADD_PRODUCT";
-export const UPDATE_PRODUCT ="UPDATE_PRODUCT";
-export const FETCH_PRODUCTS = "FETCH_PRODUCTS";
+import { ADD_PRODUCT, DELETE_PRODUCT, FETCH_PRODUCTS, UPDATE_PRODUCT } from "./types";
+
 
 
 export const deleteProduct = (productId) => {
@@ -9,7 +8,7 @@ export const deleteProduct = (productId) => {
         try {
             await axios.delete(`http://localhost:8080/products/${productId}`)
             dispatch({
-                type: "DELETE_PRODUCT",
+                type: DELETE_PRODUCT,
                 payload: {
                     productId:productId,
                 }
@@ -20,14 +19,14 @@ export const deleteProduct = (productId) => {
     
 }}
 
-export const addProduct = (product)=> {
+export const addProduct = (product , shopId)=> {
     return async(dispatch)=>{
         try {
             const formData= new FormData();
             for(const key in product)
                formData.append(key,product[key])
             
-           const res= await axios.post("http://localhost:8080/products",formData)
+           const res= await axios.post(`http://localhost:8080/shops/${shopId}/products`,formData)
            
             dispatch({
                 type:ADD_PRODUCT,
@@ -50,7 +49,7 @@ export const updateProduct = (updatedProduct) => {
            formData.append(key,updatedProduct[key])
         await axios.put(`http://localhost:8080/products/${updatedProduct.id}`,formData)
         dispatch({
-            type: "UPDATE_PRODUCT",
+            type: UPDATE_PRODUCT,
             payload: {
                 updatedProduct:updateProduct,
             }

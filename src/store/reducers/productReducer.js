@@ -1,12 +1,12 @@
-import { ADD_PRODUCT, UPDATE_PRODUCT, FETCH_PRODUCTS } from "./actions";
+import { ADD_PRODUCT, UPDATE_PRODUCT, FETCH_PRODUCTS } from "../action/types";
 
 import slugify from "slugify";
 
 const initialState = {
-  products: [],
+  products: [], loading:true,
 };
 
-const reducer = (state = initialState, action) => {
+const productReducer = (state = initialState, action) => {
   switch (action.type) {
     case "DELETE_PRODUCT":
       const productToKeep = state.products.filter(
@@ -37,6 +37,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         products: action.payload,
+        loading:false,
       };
 
     default:
@@ -44,4 +45,4 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-export default reducer;
+export default productReducer;

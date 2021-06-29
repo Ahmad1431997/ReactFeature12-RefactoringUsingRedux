@@ -2,9 +2,10 @@
 import { DeleteButtonStyled } from "../../styles";
 
 import { useDispatch } from "react-redux";
+import { deleteProduct } from "../../store/action/productActions";
 
 //Actions
-import { deleteProduct } from "../../store/actions";
+
 
 
 const DeleteButton = ({ productId }) => {

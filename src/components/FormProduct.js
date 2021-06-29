@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addProduct, updateProduct } from "../store/actions";
+import { addProduct, updateProduct } from "../store/action/productActions";
 import { useHistory } from "react-router";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router";
 
 const FormProduct = () => {
+  const shopId = useParams().shopId
   const productSlug = useParams().productSlug;
-  const products = useSelector((state) => state.products);
+  const products = useSelector((state) => state.products.products);
   const updatedProducts = products.find(
     (product) => product.slug === productSlug
   );
@@ -38,7 +39,7 @@ const FormProduct = () => {
     if(updatedProducts)
     dispatch(updateProduct(product));
     else
-    dispatch(addProduct(product));
+    dispatch(addProduct(product,shopId));
     history.push("/products");
     resetForm();
   };
