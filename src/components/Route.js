@@ -17,9 +17,9 @@ const Routes = ()=>{
           <FormProduct />
           
          </Route>
-          <Route path="/products/:productSlug/edit">
+          {/* <Route path="/products/:productSlug/edit">
           <FormProduct />
-            </Route>
+            </Route> */}
        
           <Route path="/products/:productSlug">
             <ProductDetail />

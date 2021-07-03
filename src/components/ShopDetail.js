@@ -28,9 +28,9 @@ const ShopDetail = () => {
       <Link to={`/shops/${shop.id}/products/new`}  >Add Product</Link>
       <h1>{shop.name}</h1>
       <img src={shop.image} alt={shop.name} />
-      <p>{shop.description}</p>
-      <p>{shop.price} KD</p>
-      <DeleteButton shopId={shop.id} />
+      
+      
+      {/* <DeleteButton shopId={shop.id} /> */}
       <ProductList products ={listOfProducts} />
     </DetailWrapper>
   );

@@ -14,10 +14,10 @@ const ShopList = () => {
     .map((shop) => <ShopItem shop={shop} key={shop.id} />);
 
   return (
-    <div>
+    <center>
       <SearchBar setQuery={setQuery} />
       {shops}
-    </div>
+    </center>
   );
 };
 
