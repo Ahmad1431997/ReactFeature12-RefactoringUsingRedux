@@ -17,6 +17,9 @@ const NavBar = ({ currentTheme, toggleTheme }) => {
         <NavItem className="nav-item" to="/shops" >
           Shops
         </NavItem>
+        <NavItem className="nav-item" to="/signup" >
+          Signup
+        </NavItem>
         <ThemeButton className="nav-item" onClick={toggleTheme}>
           {currentTheme === "light" ? "Dark" : "Light"} Mode
         </ThemeButton>
