@@ -1,7 +1,13 @@
 import { useState } from "react";
+import { signup } from "../store/action/authAction";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router";
 
 
 const Signup = ()=>{
+    const dispatch= useDispatch();
+    const history = useHistory();
+
     const [sign,setSign]=useState({
         username:"",
         password:"",
@@ -10,10 +16,20 @@ const Signup = ()=>{
         lastName:""
     })
 
+    const resetForm = () => {
+        setSign({
+            username:"",
+            password:"",
+            email:"",
+            firstName:"",
+            lastName:""
+        });
+      };
+
     const handleSubmit = (event) => {
         event.preventDefault();
-        dispatch(addProduct(sign));
-        history.push("/");
+        dispatch(signup(sign,history));
+        history.push("/signup");
         resetForm();
       };
 
@@ -79,7 +95,7 @@ const Signup = ()=>{
             className="form-control"
             id="exampleFormControlInput1"
             placeholder="enter the last name"
-            onChange={handleImage}
+            onChange={handleChange}
             name="lastName"
             value={sign.lastName}
           />
