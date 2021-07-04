@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { signup } from "../store/action/authAction";
+import { signup } from "../store/action/authActions";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
 
@@ -29,7 +29,6 @@ const Signup = ()=>{
     const handleSubmit = (event) => {
         event.preventDefault();
         dispatch(signup(sign,history));
-        history.push("/signup");
         resetForm();
       };
 

@@ -7,3 +7,5 @@ export const DELETE_PRODUCT = "DELETE_PRODUCT";
 export const FETCH_SHOPS = "FETCH_SHOPS"
 
 export const ADD_SHOPS = "ADD_SHOPS"
+
+export const SIGNUP = "SIGNUP"
