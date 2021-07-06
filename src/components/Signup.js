@@ -37,8 +37,9 @@ const Signup = ()=>{
       };
 
     return(
+        <center>
         <form onSubmit={handleSubmit}>
-        <div className="form-group">
+        <div style={{width:"350px"}} className="form-group">
           <label for="exampleFormControlInput1">username : </label>
           <input
             type="text"
@@ -50,8 +51,8 @@ const Signup = ()=>{
             value={sign.username}
           />
         </div>
-        <div className="form-group">
-          <label for="exampleFormControlInput1">password</label>
+        <div style={{width:"350px"}} className="form-group">
+          <label for="exampleFormControlInput1">password :</label>
           <input
             type="password"
             className="form-control"
@@ -62,8 +63,8 @@ const Signup = ()=>{
             value={sign.password}
           />
         </div>
-        <div className="form-group">
-          <label for="exampleFormControlInput1">email</label>
+        <div style={{width:"350px"}} className="form-group">
+          <label for="exampleFormControlInput1">email :</label>
           <input
             type="email"
             className="form-control"
@@ -75,8 +76,8 @@ const Signup = ()=>{
           />
         </div>
   
-        <div className="form-group">
-          <label for="exampleFormControlInput1">first name</label>
+        <div style={{width:"350px"}} className="form-group">
+          <label for="exampleFormControlInput1">first name :</label>
           <input
             type="text"
             className="form-control"
@@ -87,8 +88,8 @@ const Signup = ()=>{
             value={sign.firstName}
           />
         </div>
-        <div className="form-group">
-          <label for="exampleFormControlInput1">last name</label>
+        <div style={{width:"350px"}} className="form-group">
+          <label for="exampleFormControlInput1">last name :</label>
           <input
             type="text"
             className="form-control"
@@ -103,6 +104,7 @@ const Signup = ()=>{
           Submit
         </button>
       </form>
+      </center>
     );
 }
 

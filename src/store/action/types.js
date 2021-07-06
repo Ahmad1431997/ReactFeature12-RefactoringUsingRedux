@@ -8,4 +8,4 @@ export const FETCH_SHOPS = "FETCH_SHOPS"
 
 export const ADD_SHOPS = "ADD_SHOPS"
 
-export const SIGNUP = "SIGNUP"
+export const SET_USER = "SET_USER"

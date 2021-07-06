@@ -7,6 +7,7 @@ import ProductList from "./ProductList";
 import Home from "./Home";
 import { useSelector } from "react-redux";
 import Signup from "./Signup";
+import Signin from "./Signin";
 
 const Routes = ()=>{
 
@@ -33,6 +34,9 @@ const Routes = ()=>{
           </Route>
           <Route path="/products">
             <ProductList products={products}  />
+          </Route>
+          <Route path="/signin">
+            <Signin/>
           </Route>
           <Route path ="/signup">
             <Signup/>
